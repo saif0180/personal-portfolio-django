@@ -1,0 +1,44 @@
+
+{% extends "portfolio/base.html" %}
+
+{% load static %}
+{% block content %}
+    <h1 style="color: whitesmoke"><b>keep learning</b></h1>
+
+<div class="row justify-content-center my-3">
+  <div class="col-5">
+    <img src="{% static 'portfolio/242157902_239770331397519_9097393171977608436_n.png' %}" class="img-fluid">
+  </div>
+</div>
+
+<div class="row justify-content-center mb-3">
+  <div class="col-md-9 text-center">
+    <h1  style="color: whitesmoke" id="hometext" class="font-weight-bold">Hello i am SAAL a junior programmer and i live in mars 😁</h1>
+
+  </div>
+</div>
+
+<h2 style="color: whitesmoke" class="mt-5">good stuff</h2>
+<hr>
+<div class="row">
+  {% for project in projects %}
+  <div class="col-lg-4 col-md-6">
+
+    {% if project.url %}
+    <a href="{{ project.url }}">
+      <img src="{{ project.img.url }}" class="img-fluid mb-2">
+    </a>
+    {% else %}
+
+      <img src="{{ project.img.url }}" class="img-fluid mb-2">
+    {% endif %}
+    <h3 style="color: whitesmoke">{{ project.title }}</h3>
+    <p style="color: whitesmoke">{{ project.description }}</p>
+
+  </div>
+  {% endfor %}
+
+</div>
+
+{% endblock %}
+</body>

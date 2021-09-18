@@ -1,0 +1,17 @@
+{% extends "portfolio/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<h1 style="color: whitesmoke" class="text-center mt-5" id="blogdetailtitle">{{ blog.title }}</h1>
+
+<h5 style="color: whitesmoke" class="text-center text-muted mb-5">{{ blog.date|date:'F jS Y' }}</h5>
+
+<h3 style="color: whitesmoke">{{ blog.description|safe }}</h3>
+        {% if blog.url %}
+   <br> <a href="{{ blog.url }}">Link</a>
+    {% endif %}
+{% endblock %}
+
+
